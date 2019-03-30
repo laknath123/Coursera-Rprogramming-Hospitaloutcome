@@ -18,7 +18,7 @@ best<-function(state=as.character(),condition=as.character()){
   datain<<-fread("outcome-of-care-measures.csv",select =c("Hospital Name","State",paste(a,str_to_title(condition))))
   #need to convert the 3rd column to 
   bestHospital<-datain%>%filter(State==state)%>%
-    arrange(`State`,paste(a,str_to_title(condition),`Hospital Name`))
+    arrange(`State`,paste(a,str_to_title(condition),`Hospital Name`)) #This is where the problem is 
   (bestHospital$`Hospital Name`)[1]
 }    
 
